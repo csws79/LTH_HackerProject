@@ -1,16 +1,27 @@
 #include <iostream>
+#include <ctime>
+
 using namespace std;
 
 //	각 문제를 해결했을 때마다, 해당 시점에서 commit 할 것.
 //	commit 메시지는 자유롭게 해도 됩니다.
-
+void ascend(int arr[]);
 int main()
 {
 	//	1번
 	//	0~99 범위의 임의의 정수 100개를 저장하고, 오름차순으로 정렬하여 출력하시오.
 	//	단, 모든 변수는 int형 포인터만 사용할 것.
-	
-
+	srand(unsigned int(time));
+	int i;
+	int* arr[100], arr2[100];
+	for (i = 0; i < 100; i++){
+		arr2[i] = rand() % 100;
+	}
+	ascend(arr2);
+	for (i = 0; i < 100; i++){
+		cout << arr2[i] << " ";
+	}
+	cout << endl;
 	//	2번
 	//	사람(Person)을 나타낼 클래스를 작성하시오. Person.h, Person.cpp 파일을 만들어 구현할 것.
 	//	모든 변수, 함수는 public으로 접근하게 할 것.
@@ -53,4 +64,18 @@ int main()
 	//	교육자에게 하고싶은 말을 적으시오.
 	//	
 	return 0;
+}
+void ascend(int arr[])
+{
+	int i, j, key;
+	for (j = 0; j < 100; j++)
+	{
+		key = arr[j];
+		for (i = j - 1; (i >= 0) && (arr[i] > key); i--)
+		{
+			arr[i + 1] = arr[i];
+		}
+		arr[i + 1] = key;
+	}
+	return;
 }
