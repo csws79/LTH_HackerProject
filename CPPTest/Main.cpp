@@ -1,5 +1,6 @@
 #include <iostream>
 #include <ctime>
+#include "person.h"
 
 using namespace std;
 
@@ -11,6 +12,7 @@ int main()
 	//	1번
 	//	0~99 범위의 임의의 정수 100개를 저장하고, 오름차순으로 정렬하여 출력하시오.
 	//	단, 모든 변수는 int형 포인터만 사용할 것.
+	/*
 	srand(unsigned int(time));
 	int i;
 	int* arr[100], arr2[100];
@@ -22,6 +24,7 @@ int main()
 		cout << arr2[i] << " ";
 	}
 	cout << endl;
+	*/
 	//	2번
 	//	사람(Person)을 나타낼 클래스를 작성하시오. Person.h, Person.cpp 파일을 만들어 구현할 것.
 	//	모든 변수, 함수는 public으로 접근하게 할 것.
@@ -32,7 +35,10 @@ int main()
 	//	멤버함수
 	//		말하기(talk)			: "Hello, world!"를 출력한다.
 	//		잠자기(sleep)		: "zzz"를 출력한다.
-
+	
+	person aa;
+	aa.age = 10;
+	aa.sleep();
 
 	//  3번
 	//	반 성적 관리 시스템
