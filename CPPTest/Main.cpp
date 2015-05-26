@@ -1,6 +1,9 @@
 #include <iostream>
 #include <ctime>
 #include "person.h"
+#include <iomanip>
+#include <fstream>
+#include <string>
 
 using namespace std;
 
@@ -15,13 +18,15 @@ int main()
 	/*
 	srand(unsigned int(time));
 	int i;
-	int* arr[100], arr2[100];
+	int arr[100];
+	int* asc = arr;
+	
 	for (i = 0; i < 100; i++){
-		arr2[i] = rand() % 100;
+		arr[i] = rand() % 100;
 	}
-	ascend(arr2);
+	ascend(asc);
 	for (i = 0; i < 100; i++){
-		cout << arr2[i] << " ";
+		cout << setw(5) << asc[i];
 	}
 	cout << endl;
 	*/
@@ -35,10 +40,18 @@ int main()
 	//	멤버함수
 	//		말하기(talk)			: "Hello, world!"를 출력한다.
 	//		잠자기(sleep)		: "zzz"를 출력한다.
-	
+	/*
 	person aa;
 	aa.age = 10;
 	aa.sleep();
+	aa.isAlive = 0;
+	person bb;
+	bb.age = 19;
+	bb.talk();
+	bb.isAlive = true;
+	*/
+
+	
 
 	//  3번
 	//	반 성적 관리 시스템
@@ -63,12 +76,51 @@ int main()
     //      int subjectCount;	// 응시과목수
     //      subject* pItem;		// 과목 목록
     //  };
+	/*
+	struct subject {
+		string itemName;
+		int score;
+	};
 
+	struct student {
+		string name;		// 학생이름
+		int subjectCount;	// 응시과목수
+		subject* pItem;
+	};
+
+	ifstream fin;
+	fin.open("list.txt");
+	student studentName[10];
+	for (int i = 0; !fin.eof(); i++){
+		
+	
+		fin >> studentName[i].name;
+		fin >> studentName[i].subjectCount;
+		studentName[i].pItem = new subject[studentName[i].subjectCount];
+		for (int j = 0; j < studentName[i].subjectCount; j++){
+			fin >> studentName[i].pItem[j].itemName;
+			fin >> studentName[i].pItem[j].score;
+		}
+	}
+
+	for (int i = 0; i < 6; i++){
+		cout << studentName[i].name << " " << studentName[i].subjectCount << " " << studentName[i].pItem[i].itemName << " " << studentName[i].pItem[i].score << endl;
+	}
+
+	fin.close();
+	*/
 
 	
 	//	4번
 	//	교육자에게 하고싶은 말을 적으시오.
-	//	
+	/*
+	준현이형, 승완이형, 그리고 성수형께 올립니다.
+	교육 진도가 빠른 감이 좀 빠르고,
+	과제 난이도도 좀 어려워요(다른 애들한텐 모르겠지만 최소한 저만큼은 ㅠㅠ).
+	진도는 따라갈 순 있는데 좀만 쉽게 내주세요 과제 ㅎㅎㅎㅎㅎㅎ
+	그래도 형들도 하시는 일들 많으신데 형들 시간 할애해서 저희 막내들 교육 봐주시느라 언제나 감사할 따름입니다.
+	남은 6개월 더 노력하겠습니다!!
+	*/
 	return 0;
 }
 void ascend(int arr[])
